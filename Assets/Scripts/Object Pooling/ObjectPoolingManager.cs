@@ -16,6 +16,7 @@ public class ObjectPoolingManager : Singleton<ObjectPoolingManager>
         public bool collectionCheck;
     }
 
+    public static event Action OnObjectPoolCreated;
 
     Dictionary<int, ObjectPools> poolDictionary = new Dictionary<int, ObjectPools>();
 
@@ -23,6 +24,7 @@ public class ObjectPoolingManager : Singleton<ObjectPoolingManager>
     protected override void Awake()
     {
         base.Awake();
+        OnObjectPoolCreated?.Invoke();
     }
 
     public IObjectPool<GameObject> GetPool(int poolDictionaryKey, GameObject poolPrefab, int defaultCapacity = 10, int maxSize = 100, bool collectionCheck = true)

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     void OnEnable()
     {
+        ObjectPoolingManager.OnObjectPoolCreated += GetAudioPool;
         GameManager.OnClickUIButton += PlayButtonClickSFX;
         ButtonHoverAnimations.OnHoverEnter += PlayButtonHoverSFX;
 
@@ -36,6 +38,7 @@ public class AudioManager : MonoBehaviour
 
     void OnDisable()
     {
+        ObjectPoolingManager.OnObjectPoolCreated -= GetAudioPool;
         GameManager.OnClickUIButton -= PlayButtonClickSFX;
         ButtonHoverAnimations.OnHoverEnter -= PlayButtonHoverSFX;
 
@@ -45,13 +48,12 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    private void Awake()
+   
+
+    void GetAudioPool()
     {
         audioPool = ObjectPoolingManager.Instance.GetPool(audioPrefab.gameObject.GetInstanceID(), audioPrefab);
     }
-
-
-
 
     void PlaySound(AudioSO audioSO, float clipVolume = 1)
     {
