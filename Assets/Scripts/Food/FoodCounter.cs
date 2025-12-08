@@ -15,13 +15,11 @@ public class FoodCounter : Singleton<FoodCounter>
     private void OnEnable()
     {
         TreeTrunk.OnFoodDeposited += UpdateFoodCount;
-        OnFoodCounted += DestroyCollectedFood;
     }
 
     private void OnDisable()
     {
         TreeTrunk.OnFoodDeposited -= UpdateFoodCount;
-        OnFoodCounted -= DestroyCollectedFood;
     }
 
 
@@ -56,11 +54,5 @@ public class FoodCounter : Singleton<FoodCounter>
         seedsDepositedThisRound += seedQuantity;
     }
 
-    void DestroyCollectedFood(List<GameObject> foodItemsCountedList)
-    {
-        foreach (var item in foodItemsCountedList)
-        {
-            Destroy(item);
-        }
-    }
+    
 }

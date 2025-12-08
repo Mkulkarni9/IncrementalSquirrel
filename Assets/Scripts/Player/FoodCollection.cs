@@ -6,9 +6,6 @@ public class FoodCollection : MonoBehaviour
 {
     public static event Action<GameObject> OnFoodCollected;
 
-    [SerializeField] int carryingCapacity;
-
-
     public List<GameObject> FoodCarried = new List<GameObject>();
     float heightOfCollector = 0.5f;
     float heightOfEachFoodItem = 1f;
@@ -16,12 +13,12 @@ public class FoodCollection : MonoBehaviour
 
     private void OnEnable()
     {
-        FoodCounter.OnFoodCounted += RemoveFoodFromAnimal;
+        //FoodCounter.OnFoodCounted += RemoveFoodFromAnimal;
     }
 
     private void OnDisable()
     {
-        FoodCounter.OnFoodCounted -= RemoveFoodFromAnimal;
+        //FoodCounter.OnFoodCounted -= RemoveFoodFromAnimal;
 
     }
     
@@ -32,12 +29,12 @@ public class FoodCollection : MonoBehaviour
         {
             FoodCarried.Add(collision.gameObject);
             AttachCollectedFoodToCollector(collision.gameObject, FoodCarried.Count);
-
+            Debug.Log("Food collected "+ FoodCarried[0]);
             OnFoodCollected?.Invoke(collision.gameObject);
 
             if (CheckCarryingCapacity())
             {
-                this.GetComponentInParent<AnimalController>().SetMoveTowardsTree(true);
+                this.GetComponentInParent<Animal>().SetMoveTowardsTree(true);
             }
 
         }
@@ -45,16 +42,11 @@ public class FoodCollection : MonoBehaviour
 
     bool CheckCarryingCapacity()
     {
-        if (FoodCarried.Count == carryingCapacity)
+        if (FoodCarried.Count == this.GetComponentInParent<Animal>().CarryingCapacity)
         {
             return true;
         }
         else return false;
-    }
-
-    void RemoveFoodCollidersAfterCollection(GameObject food)
-    {
-        food.GetComponent<Collider2D>().enabled = false;
     }
 
     void AttachCollectedFoodToCollector(GameObject food, int itemIndex)
@@ -78,7 +70,16 @@ public class FoodCollection : MonoBehaviour
 
     public void RemoveFoodFromAnimal(List<GameObject> foodItemsCountedList)
     {
+        
+
+        foreach (var item in foodItemsCountedList)
+        {
+            Debug.Log("Destroying collected food");
+            Destroy(item);
+        }
         FoodCarried.Clear();
         Debug.Log("Food removed from animal");
+
     }
+
 }

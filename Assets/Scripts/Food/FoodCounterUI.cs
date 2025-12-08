@@ -13,31 +13,36 @@ public class FoodCounterUI : MonoBehaviour
 
     private void OnEnable()
     {
-        FoodCounter.OnFoodCounted += UpdateFoodUI;
-        FoodCounter.OnFoodCounted += UpdateSeedsUI;
+        FoodCounter.OnFoodCounted += UpdateUI;
+        WinterManager.OnWinterChanged += UpdateFoodUI;
     }
 
     private void OnDisable()
     {
-        FoodCounter.OnFoodCounted -= UpdateFoodUI;
-        FoodCounter.OnFoodCounted -= UpdateSeedsUI;
+        FoodCounter.OnFoodCounted -= UpdateUI;
+        WinterManager.OnWinterChanged += UpdateFoodUI;
+
     }
 
     private void Start()
     {
-        UpdateFoodUI(null);
-        UpdateSeedsUI(null);
+    }
+
+    void UpdateUI(List<GameObject> foodItemsCountedList)
+    {
+        UpdateFoodUI();
+        UpdateSeedsUI();
     }
 
 
-    void UpdateFoodUI(List<GameObject> foodItemsCountedList)
+    void UpdateFoodUI()
     {
-        winterCountText.text = "Winter: "+WinterManager.Instance.CurrentWinterLevel;
+        winterCountText.text = "Winter: "+(WinterManager.Instance.CurrentWinterLevel+1);
         foodAmountText.text = FoodCounter.Instance.TotalPlayerFood.ToString() + " / " + WinterManager.Instance.CurrentWinterLevelThreshold;
     }
 
 
-    void UpdateSeedsUI(List<GameObject> foodItemsCountedList)
+    void UpdateSeedsUI()
     {
         seedAmountText.text = FoodCounter.Instance.TotalPlayerSeeds.ToString();
     }

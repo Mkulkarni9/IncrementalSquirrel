@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8907748797656453418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5703180045005111136, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_Name
+      value: DeerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375766662865406399, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5421413
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375766662865406399, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375766662865406399, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_Color.r
+      value: 0.757737
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013008831874605120, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: baseMovementSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: baseCarryingCapacity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: baseCoolDownInterval
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}

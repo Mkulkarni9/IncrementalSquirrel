@@ -12,11 +12,11 @@ public class TreeTrunk : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AnimalController animal = collision.gameObject.GetComponent<AnimalController>();
+        Animal animal = collision.gameObject.GetComponent<Animal>();
         Debug.Log("Collision with animal");
         if (animal != null)
         {
-            animal.SetMoveTowardsTree(false);
+            animal.SetStatusToCoolDown();
 
             foreach (var item in animal.GetComponentInChildren<FoodCollection>().FoodCarried)
             {
@@ -24,6 +24,7 @@ public class TreeTrunk : MonoBehaviour
             }
 
             OnFoodDeposited?.Invoke(animal.GetComponentInChildren<FoodCollection>().FoodCarried);
+            animal.GetComponentInChildren<FoodCollection>().RemoveFoodFromAnimal(animal.GetComponentInChildren<FoodCollection>().FoodCarried);
         }
     }
 

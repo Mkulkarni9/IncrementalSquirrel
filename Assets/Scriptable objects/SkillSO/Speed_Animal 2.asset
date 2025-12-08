@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06289b5447519cb40a6988ce3d176fcc, type: 3}
+  m_Name: Speed_Animal 2
+  m_EditorClassIdentifier: 
+  skillName: Animal Speed
+  skillDescription: Increases all animals speed by 20%
+  seedCost: 500
+  essenceCost: 0
+  skillsUnlocked:
+  - {fileID: 259200160450079440, guid: c0047e1093596514ab8bdcbeb83fc7d9, type: 3}
+  skillPrefab: {fileID: 1348240055378520910, guid: 628f9f2f62bc0e24caefacb5441ac47b, type: 3}
+  speedIncrementFactor: 0.4

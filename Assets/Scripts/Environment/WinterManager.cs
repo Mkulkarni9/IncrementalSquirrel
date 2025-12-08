@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class WinterManager : Singleton<WinterManager>
 {
-    public static event Action<int> OnWinterChanged;
+    public static event Action OnWinterChanged;
 
     [SerializeField] List<int> winterThresholds;
 
     public int CurrentWinterLevel {  get; private set; }
     public int CurrentWinterLevelThreshold {  get; private set; }
+    public int NextWinterLevelThreshold {  get; private set; }
 
 
     protected override void Awake()
@@ -26,14 +27,11 @@ public class WinterManager : Singleton<WinterManager>
     private void OnEnable()
     {
         FoodCounter.OnFoodCounted += CheckWinterLevel;
-        OnWinterChanged += SetWinterLevel;
     }
 
     private void OnDisable()
     {
         FoodCounter.OnFoodCounted -= CheckWinterLevel;
-        OnWinterChanged -= SetWinterLevel;
-
 
     }
 
@@ -41,7 +39,9 @@ public class WinterManager : Singleton<WinterManager>
     {
         if(FoodCounter.Instance.TotalPlayerFood >= CurrentWinterLevelThreshold)
         {
-            OnWinterChanged?.Invoke(++CurrentWinterLevel);
+            CurrentWinterLevel++;
+            SetWinterLevel(CurrentWinterLevel);
+            
         }
        
     }
@@ -50,6 +50,9 @@ public class WinterManager : Singleton<WinterManager>
     {
         CurrentWinterLevel = index;
         CurrentWinterLevelThreshold = winterThresholds[CurrentWinterLevel];
+        NextWinterLevelThreshold = winterThresholds[CurrentWinterLevel+1];
+
+        OnWinterChanged?.Invoke();
     }
 
 

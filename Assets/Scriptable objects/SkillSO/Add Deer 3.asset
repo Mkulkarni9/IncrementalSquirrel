@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4245bda5af23b41a81eeb53a7679a6, type: 3}
+  m_Name: Add Deer 3
+  m_EditorClassIdentifier: 
+  skillName: Add deer
+  skillDescription: Adds a new animal
+  seedCost: 1200
+  essenceCost: 0
+  skillsUnlocked:
+  - {fileID: 3193184448675563514, guid: 97aa0c1f0a15c104e8064018f1f98493, type: 3}
+  skillPrefab: {fileID: 6591255587456406170, guid: 60de05266872297468b3261409f7e2bd, type: 3}
+  animalPrefab: {fileID: 3799747666067975754, guid: 723e1666d8a448543a8203b2fbd39967, type: 3}
