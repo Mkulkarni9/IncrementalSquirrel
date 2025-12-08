@@ -53,6 +53,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: animalSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e9444c508176cce4eb4b4b084c46edcd, type: 2}
+    - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
       propertyPath: baseLuck
       value: 2
       objectReference: {fileID: 0}

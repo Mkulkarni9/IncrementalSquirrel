@@ -9,6 +9,7 @@ public class AnimalStatsManager : Singleton<AnimalStatsManager>
     public static event Action OnAnimalRestTimeUpdated;
     public static event Action OnAnimaDodgeChanceUpdated;
     public static event Action OnAnimalLuckUpdated;
+    public static event Action OnAnimalSlowdownSpeedTimeReductionUpdated;
 
 
 
@@ -17,6 +18,8 @@ public class AnimalStatsManager : Singleton<AnimalStatsManager>
     public float AnimalRestTimeBonus { get; private set; }
     public float AnimalDodgeBonus { get; private set; }
     public float AnimalLuckBonus { get; private set; }
+    public float SlowdownSpeedTimeReduction { get; private set; }
+    public float SlowdownSpeedAmountReduction { get; private set; }
 
     protected override void Awake()
     {
@@ -26,7 +29,7 @@ public class AnimalStatsManager : Singleton<AnimalStatsManager>
     
     public void UpdateAnimalSpeedBonus(float animalSpeedBonus)
     {
-        AnimalSpeedBonus = animalSpeedBonus;
+        AnimalSpeedBonus += animalSpeedBonus;
         Debug.Log("Animal speed bonus updated: "+ AnimalSpeedBonus);
         OnAnimalSpeedUpdated?.Invoke();
     }
@@ -40,22 +43,29 @@ public class AnimalStatsManager : Singleton<AnimalStatsManager>
 
     public void UpdateAnimalRestTimeBonus(float animalRestTimeBonus)
     {
-        AnimalRestTimeBonus = animalRestTimeBonus;
+        AnimalRestTimeBonus += animalRestTimeBonus;
         OnAnimalRestTimeUpdated?.Invoke();
 
     }
 
     public void UpdateAnimalDodgeChanceBonus(float animalDodgeBonus)
     {
-        AnimalDodgeBonus = animalDodgeBonus;
+        AnimalDodgeBonus += animalDodgeBonus;
         OnAnimaDodgeChanceUpdated?.Invoke();
 
     }
 
     public void UpdateAnimalLuckBonus(float animalLuckBonus)
     {
-        AnimalLuckBonus = animalLuckBonus;
+        AnimalLuckBonus += animalLuckBonus;
         OnAnimalLuckUpdated?.Invoke();
+
+    }
+
+    public void UpdateSlowdownSpeedTimeReductionBonus(float animalSlowdownSpeedBonus)
+    {
+        SlowdownSpeedTimeReduction += animalSlowdownSpeedBonus;
+        OnAnimalSlowdownSpeedTimeReductionUpdated?.Invoke();
 
     }
 

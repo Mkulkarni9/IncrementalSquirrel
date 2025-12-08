@@ -18,5 +18,7 @@ MonoBehaviour:
   essenceCost: 0
   skillsUnlocked:
   - {fileID: 3847895591454883123, guid: e938c55c62ed3da4b81a8f88d9580712, type: 3}
+  - {fileID: 7519834892684416860, guid: b46d578c4e5fbfa408ef5542395a63a1, type: 3}
+  - {fileID: 6885827581744114648, guid: 0e7748ebfde3e12498f280d3e5409b3b, type: 3}
   skillPrefab: {fileID: -2394501406323074146, guid: 4129d0a6a3e43fa459aff9cccf9d6c95, type: 3}
   dodgeChance: 0.02

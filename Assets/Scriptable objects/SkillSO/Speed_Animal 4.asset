@@ -18,4 +18,4 @@ MonoBehaviour:
   essenceCost: 0
   skillsUnlocked: []
   skillPrefab: {fileID: 1348240055378520910, guid: 628f9f2f62bc0e24caefacb5441ac47b, type: 3}
-  speedIncrementFactor: 0.8
+  speedIncrementFactor: 0.1

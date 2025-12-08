@@ -65,6 +65,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
+      propertyPath: animalSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 69cb5a6513baf274090909a58a41a200, type: 2}
+    - target: {fileID: 9159066575184941463, guid: 399eab2b4ca052b4bad34089f4c32269, type: 3}
       propertyPath: baseMovementSpeed
       value: 4
       objectReference: {fileID: 0}

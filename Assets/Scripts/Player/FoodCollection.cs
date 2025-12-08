@@ -7,11 +7,12 @@ public class FoodCollection : MonoBehaviour
     public static event Action<GameObject> OnFoodCollected;
 
     public List<GameObject> FoodCarried = new List<GameObject>();
+    public List<ArtefactSO> ArtefactCarried = new List<ArtefactSO>();
     float heightOfCollector = 0.5f;
     float heightOfEachFoodItem = 1f;
 
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         //FoodCounter.OnFoodCounted += RemoveFoodFromAnimal;
     }
@@ -20,7 +21,7 @@ public class FoodCollection : MonoBehaviour
     {
         //FoodCounter.OnFoodCounted -= RemoveFoodFromAnimal;
 
-    }
+    }*/
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,8 +30,13 @@ public class FoodCollection : MonoBehaviour
         {
             FoodCarried.Add(collision.gameObject);
             AttachCollectedFoodToCollector(collision.gameObject, FoodCarried.Count);
-            Debug.Log("Food collected "+ FoodCarried[0]);
             OnFoodCollected?.Invoke(collision.gameObject);
+
+            if(CheckArtefact())
+            {
+                //Rarity logic to be added
+                ArtefactCarried.Add(ArtefactManager.Instance.ArtefactsList[0]);
+            }
 
             if (CheckCarryingCapacity())
             {
@@ -74,12 +80,34 @@ public class FoodCollection : MonoBehaviour
 
         foreach (var item in foodItemsCountedList)
         {
-            Debug.Log("Destroying collected food");
+            //Debug.Log("Destroying collected food");
             Destroy(item);
         }
         FoodCarried.Clear();
-        Debug.Log("Food removed from animal");
+        //Debug.Log("Food removed from animal");
 
+    }
+
+    public void RemoveArtefactsFromAnimal()
+    {
+
+        ArtefactCarried.Clear();
+        Debug.Log("Artefacts removed from animal");
+
+    }
+
+    bool CheckArtefact()
+    {
+        float artefactRandomNumber = UnityEngine.Random.Range(0f,100f);
+
+        if(artefactRandomNumber<= this.GetComponentInParent<Animal>().Luck)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

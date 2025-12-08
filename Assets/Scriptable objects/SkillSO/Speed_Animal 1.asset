@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 5668981270673020747, guid: f948bf63cfef53f42ae64f810d5de8b1, type: 3}
   - {fileID: 5290624796582170938, guid: cac591df8f8062e488fed413d625a0dc, type: 3}
   skillPrefab: {fileID: 1348240055378520910, guid: 628f9f2f62bc0e24caefacb5441ac47b, type: 3}
-  speedIncrementFactor: 0.2
+  speedIncrementFactor: 0.1

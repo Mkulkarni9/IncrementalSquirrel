@@ -19,4 +19,4 @@ MonoBehaviour:
   skillsUnlocked:
   - {fileID: 2359962413621060402, guid: 08e7829e05c14234aa734612ccb67170, type: 3}
   skillPrefab: {fileID: 1348240055378520910, guid: 628f9f2f62bc0e24caefacb5441ac47b, type: 3}
-  speedIncrementFactor: 0.6
+  speedIncrementFactor: 0.1

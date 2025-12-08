@@ -25,6 +25,14 @@ public class Ground : Singleton<Ground>
             foodDropped.Add(collision.gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Obstacle>() != null)
+        {
+            collision.gameObject.GetComponent<Obstacle>().CollidedWithGround();
+        }
+    }
+    
 
     public void RemoveFoodFromGround(GameObject foodCollected)
     {

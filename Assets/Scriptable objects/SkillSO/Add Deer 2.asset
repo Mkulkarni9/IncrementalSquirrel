@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Add Deer 2
   m_EditorClassIdentifier: 
   skillName: Add deer
-  skillDescription: Adds a new animal
+  skillDescription: Adds a new deer
   seedCost: 500
   essenceCost: 0
   skillsUnlocked:

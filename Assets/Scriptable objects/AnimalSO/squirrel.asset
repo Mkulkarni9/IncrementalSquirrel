@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f651dfee97da344986a494e85ecf206, type: 3}
   m_Name: squirrel
   m_EditorClassIdentifier: 
+  category: 0
+  type: 0
+  baseMovementSpeed: 3
+  baseCarryingCapacity: 1
+  baseRestTime: 1
+  baseDodgeChance: 0.05
+  baseLuck: 2
