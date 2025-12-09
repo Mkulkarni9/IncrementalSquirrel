@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject foodPrefab;
-    [SerializeField] float timeIntervalBetweenFoodSpawns;
-
+    [SerializeField] TreesSO treeSO;
 
     Coroutine foodSpawnRoutine;
 
@@ -33,16 +31,46 @@ public class SpawnManager : MonoBehaviour
         
         while(true)
         {
-            yield return new WaitForSeconds(timeIntervalBetweenFoodSpawns);
+            yield return new WaitForSeconds(treeSO.intervalBetweenFruitSpawns);
 
             float spawnObjectLeftBound = this.gameObject.GetComponent<Collider2D>().bounds.min.x;
             float spawnObjectRightBound = this.gameObject.GetComponent<Collider2D>().bounds.max.x;
             float spawnObjectBottomBound = this.gameObject.GetComponent<Collider2D>().bounds.min.y;
 
             float spawnXPosition = Random.Range(spawnObjectLeftBound, spawnObjectRightBound);
-            Instantiate(foodPrefab, new Vector2(spawnXPosition, spawnObjectBottomBound - 0.5f), Quaternion.identity);
+
+            int foodIndex = GetRandomIndex();
+            
+            Quaternion spawnQuaternion = Quaternion.Euler(0f,0f,Random.Range(0f,180f));
+            Instantiate(treeSO.fruits[foodIndex].fruitPrefab, new Vector2(spawnXPosition, spawnObjectBottomBound - 0.5f), spawnQuaternion);
 
         }
+    }
+
+
+    int GetRandomIndex()
+    {
+        float sumWeights = 0;
+        
+        for (int i = 0; i < treeSO.fruits.Count; i++)
+        {
+            sumWeights += treeSO.fruits[i].spawnWeightage;
+        }
+
+        float randomNumber = Random.Range(0f, 1f);
+
+        float sumProbabilities = 0;
+        for (int i = 0; i < treeSO.fruits.Count; i++)
+        {
+            sumProbabilities += treeSO.fruits[i].spawnWeightage / sumWeights;
+
+            if (randomNumber <= sumProbabilities)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
 }

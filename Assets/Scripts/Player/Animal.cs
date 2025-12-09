@@ -193,10 +193,10 @@ public class Animal : MonoBehaviour
     IEnumerator SlowMovementRoutine(float amountSlowed, float timeSlowed)
     {
         currentMovementSpeed = MovementSpeed * (1 - amountSlowed);
-        Debug.Log("Move speed after slowing down: "+ currentMovementSpeed);
+        //Debug.Log("Move speed after slowing down: "+ currentMovementSpeed);
         yield return new WaitForSeconds(timeSlowed);
         currentMovementSpeed = MovementSpeed;
-        Debug.Log("Resetting move speed: " + currentMovementSpeed);
+        //Debug.Log("Resetting move speed: " + currentMovementSpeed);
     }
 
     

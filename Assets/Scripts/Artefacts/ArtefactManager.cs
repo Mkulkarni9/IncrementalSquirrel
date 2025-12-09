@@ -12,12 +12,12 @@ public class ArtefactManager : Singleton<ArtefactManager>
     protected override void Awake()
     {
         base.Awake();
+
+        ArtefactsCollectedList = new List<ArtefactSO>();
+        ArtefactsList = artefactsList ?? new List<ArtefactSO>();
     }
 
-    private void Start()
-    {
-        ArtefactsList = artefactsList;
-    }
+    
 
 
     public void TriggerArtefacts(ArtefactSO artefactAdded)

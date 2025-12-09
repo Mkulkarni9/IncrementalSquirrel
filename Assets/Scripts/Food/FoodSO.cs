@@ -21,4 +21,5 @@ public class FoodSO : ScriptableObject
     public Type foodType;
     public int foodQuantity;
     public int seedQuantity;
+    public int lifeEssenceQuantity;
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6379f40ac80a1494f89643301b5b323f, type: 3}
+  m_Name: Carrying capacity 3
+  m_EditorClassIdentifier: 
+  skillName: Carrying capacity
+  skillDescription: Increase animal carrying capacity
+  seedCost: 500
+  essenceCost: 0
+  skillsUnlocked: []
+  skillPrefab: {fileID: -9146299047042137198, guid: 75699073830dc444f8f4e86bed69f772, type: 3}
+  carryingCapacity: 1

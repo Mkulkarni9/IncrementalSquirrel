@@ -37,8 +37,8 @@ public class FoodCounter : Singleton<FoodCounter>
         TotalPlayerFood += foodDepositedThisRound;
         TotalPlayerSeeds += seedsDepositedThisRound;
 
-        Debug.Log("Total player food: "+ TotalPlayerFood);
-        Debug.Log("Total player seeds: "+ TotalPlayerSeeds);
+        //Debug.Log("Total player food: "+ TotalPlayerFood);
+        //Debug.Log("Total player seeds: "+ TotalPlayerSeeds);
 
         OnFoodCounted?.Invoke(foodItemsDepositedList);
     }

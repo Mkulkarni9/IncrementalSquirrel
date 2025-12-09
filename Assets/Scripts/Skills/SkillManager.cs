@@ -24,11 +24,11 @@ public class SkillManager : Singleton<SkillManager>
 
     public void UnlockSkills(SkillSO skillActivated)
     {
-        Debug.Log("Unlocking skills: ");
+        //Debug.Log("Unlocking skills: ");
         for (int i = 0; i < skillActivated.skillsUnlocked.Count; i++)
         {
             Button activatedSkill = Instantiate(skillActivated.skillsUnlocked[i], skillButtonContainer.transform);
-            Debug.Log(skillActivated.skillsUnlocked[i] + " instantiated");
+            //Debug.Log(skillActivated.skillsUnlocked[i] + " instantiated");
         }
     }
 
