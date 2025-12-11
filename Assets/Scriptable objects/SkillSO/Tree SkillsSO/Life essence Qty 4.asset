@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eacd0d4dd5e2b428ddbf5549bab74e, type: 3}
+  m_Name: Life essence Qty 4
+  m_EditorClassIdentifier: 
+  skillName: Life essence quantity increase
+  skillDescription: Increase life essence qty from fruit
+  seedCost: 15000
+  essenceCost: 0
+  skillsUnlocked: []
+  skillPrefab: {fileID: -3447297152692493999, guid: d426ca5186647a64d8913f53aab02c0d, type: 3}
+  lifeEssenceQtyIncreaseFactor: 0.25

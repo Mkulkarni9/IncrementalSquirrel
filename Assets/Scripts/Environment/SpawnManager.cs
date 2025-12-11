@@ -5,12 +5,43 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] TreesSO treeSO;
 
+
+    //Tree Variables
+    public float FruitSpawnRate { get; private set; }
+
     Coroutine foodSpawnRoutine;
 
 
+    private void OnEnable()
+    {
+        TreeStatsManager.OnTreeFruitSpawnRateUpdated += UpdateFruitSpawnRate;
+    }
+
+
+    private void OnDisable()
+    {
+        TreeStatsManager.OnTreeFruitSpawnRateUpdated -= UpdateFruitSpawnRate;
+
+    }
     private void Start()
     {
+        UpdateVariables();
+
         SpawnFood();
+    }
+
+    public void UpdateVariables()
+    {
+        UpdateFruitSpawnRate();
+    }
+
+
+
+
+    void UpdateFruitSpawnRate()
+    {
+        FruitSpawnRate = treeSO.intervalBetweenFruitSpawns * (1 - TreeStatsManager.Instance.TreeFruitSpawnIntervalBonus);
+        Debug.Log("Fruit spawn rate: "+ FruitSpawnRate);
     }
 
 
@@ -31,7 +62,7 @@ public class SpawnManager : MonoBehaviour
         
         while(true)
         {
-            yield return new WaitForSeconds(treeSO.intervalBetweenFruitSpawns);
+            yield return new WaitForSeconds(FruitSpawnRate);
 
             float spawnObjectLeftBound = this.gameObject.GetComponent<Collider2D>().bounds.min.x;
             float spawnObjectRightBound = this.gameObject.GetComponent<Collider2D>().bounds.max.x;

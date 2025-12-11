@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1119c7e73852254180c5d9b7b58ce6c, type: 3}
+  m_Name: Add Tree2
+  m_EditorClassIdentifier: 
+  skillName: Add Tree 1
+  skillDescription: Adds a tree
+  seedCost: 5000
+  essenceCost: 0
+  skillsUnlocked:
+  - {fileID: 5110382909513481684, guid: 3197ab650e4020c4ba3d3f16ab17ebe7, type: 3}
+  skillPrefab: {fileID: 7033569742450091779, guid: ff1be4a1205805943bfbf1c640fe70e2, type: 3}
+  treePrefab: {fileID: 731625881104689580, guid: c1d7c02cdddc7664baec5d5a62e31a1a, type: 3}
+  treeLocation: {fileID: 1675061351204983646, guid: f74a30a5dfbd88342a6a2ca2f4797c69, type: 3}

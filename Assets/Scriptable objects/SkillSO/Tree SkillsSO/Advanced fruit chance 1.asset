@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380e01fd8baacd645b56a23c8b82348b, type: 3}
+  m_Name: Advanced fruit chance 1
+  m_EditorClassIdentifier: 
+  skillName: Advanced fruit chance
+  skillDescription: Higher probanbility of spawning higher order fruits
+  seedCost: 25
+  essenceCost: 0
+  skillsUnlocked: []
+  skillPrefab: {fileID: 4008144611671619611, guid: 3d20080d3e24fe44da917d58dc148bc6, type: 3}
+  increasedChanceOfAdvancedFruitFactor: 0.2

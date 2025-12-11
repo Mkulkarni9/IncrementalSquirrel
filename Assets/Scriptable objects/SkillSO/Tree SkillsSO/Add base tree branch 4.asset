@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c308524a58949543b19cd0411e03290, type: 3}
+  m_Name: Add base tree branch 4
+  m_EditorClassIdentifier: 
+  skillName: Add base tree branch
+  skillDescription: Adds a branch to the base tree
+  seedCost: 200
+  essenceCost: 50000
+  skillsUnlocked: []
+  skillPrefab: {fileID: 7654977033381068334, guid: 4d2eaa0451ce9fe4b8b376168bec5b89, type: 3}
+  branchPrefab: {fileID: 7464126378496885264, guid: f9b3daa2e49e0a445ae717937998fff0, type: 3}

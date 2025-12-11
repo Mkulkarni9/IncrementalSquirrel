@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58631c88b7a86bb42a1073b521fab333, type: 3}
+  m_Name: Fruit Spawn Rate 1
+  m_EditorClassIdentifier: 
+  skillName: Fruit spawn rate decrease
+  skillDescription: Decreases rate of fruits spawning
+  seedCost: 50
+  essenceCost: 0
+  skillsUnlocked:
+  - {fileID: 7868324723818364176, guid: cbcdb388ed91c9543968e842a72ca69c, type: 3}
+  - {fileID: 8244512244303500529, guid: bf5a252276816e74ba9cebd08cffbf12, type: 3}
+  - {fileID: 258443042645577744, guid: 491944cb814a8844f9fc4eeb1c831fb8, type: 3}
+  skillPrefab: {fileID: -6120035607831230646, guid: cfb2da3e62ae75b4e9a4810123f6d79b, type: 3}
+  fruitSpawnRateInterval: 0.05
