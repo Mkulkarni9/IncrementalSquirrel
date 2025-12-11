@@ -9,7 +9,7 @@ public class TreesSO : ScriptableObject
     public struct FruitTypes
     {
         public GameObject fruitPrefab;
-        public float spawnWeightage;
+        public int spawnWeightage;
     }
 
     public List<FruitTypes> fruits;

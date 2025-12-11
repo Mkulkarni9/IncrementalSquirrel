@@ -32,6 +32,7 @@ public class FoodCollection : MonoBehaviour
             AttachCollectedFoodToCollector(collision.gameObject, FoodCarried.Count);
             OnFoodCollected?.Invoke(collision.gameObject);
 
+
             if(CheckArtefact())
             {
                 //Rarity logic to be added

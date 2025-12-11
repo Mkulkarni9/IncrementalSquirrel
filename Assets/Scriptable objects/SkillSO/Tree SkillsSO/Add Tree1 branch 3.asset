@@ -19,3 +19,5 @@ MonoBehaviour:
   skillsUnlocked: []
   skillPrefab: {fileID: 7654977033381068334, guid: 4d2eaa0451ce9fe4b8b376168bec5b89, type: 3}
   branchPrefab: {fileID: 998466375640859857, guid: ba059d22fd4431a449f1006b5172f6ab, type: 3}
+  branchLocation: {x: 10.7, y: 6.64, z: 0}
+  branchRotation: {x: 0, y: 0, z: -10}

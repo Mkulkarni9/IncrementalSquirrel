@@ -5,13 +5,39 @@ public class ObstaclespawnManager : MonoBehaviour
 {
     [SerializeField] TreesSO treeSO;
 
+    public float ObstacleSpawnRate { get; private set; }
+
 
     Coroutine obstacleSpawnRoutine;
 
 
+    private void OnEnable()
+    {
+        TreeStatsManager.OnTreeObstacleSpawnRateUpdated += UpdateObstacleSpawnRate;
+    }
+
+    private void OnDisable()
+    {
+        TreeStatsManager.OnTreeObstacleSpawnRateUpdated -= UpdateObstacleSpawnRate;
+
+    }
+
     private void Start()
     {
+        UpdateVariables();
+
         SpawnObstacle();
+    }
+
+    public void UpdateVariables()
+    {
+        UpdateObstacleSpawnRate();
+    }
+
+    void UpdateObstacleSpawnRate()
+    {
+        ObstacleSpawnRate = treeSO.intervalBetweenObstacleSpawns * (1 + TreeStatsManager.Instance.TreeObstacleSpawnIntervalBonus);
+        Debug.Log("Obstacle spawn rate: " + ObstacleSpawnRate);
     }
 
 

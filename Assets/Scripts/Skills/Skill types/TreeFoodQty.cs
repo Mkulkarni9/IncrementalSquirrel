@@ -6,7 +6,7 @@ public class TreeFoodQty : Skill
     {
         if (skill is TreeFoodQtySO foodQtySkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(foodQtySkill.foodQtyIncreaseFactor);
+            FruitStatsManager.Instance.UpdateFoodQtyBonus(foodQtySkill.foodQtyIncreaseFactor);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }

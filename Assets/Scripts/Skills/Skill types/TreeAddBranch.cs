@@ -6,7 +6,7 @@ public class TreeAddBranch : Skill
     {
         if (skill is TreeAddBranchSO addBranchSkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(addBranchSkill.branchPrefab);
+            TreesManager.Instance.AddBranch(addBranchSkill.branchPrefab, addBranchSkill.branchLocation, addBranchSkill.branchRotation);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }

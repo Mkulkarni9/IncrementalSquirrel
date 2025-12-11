@@ -20,6 +20,7 @@ public class Animal : MonoBehaviour
     //Movement variables
     public bool IsMoveTowardsTree { get; private set; }
     public bool IsMoveRight { get; private set; }
+    bool isTurnRight;
 
 
     float currentMovementSpeed;
@@ -69,6 +70,18 @@ public class Animal : MonoBehaviour
         {
             MoveTowardsTree();
             IsMoveRight = false;
+        }
+
+        if(IsMoveRight && !isTurnRight)
+        {
+            Turn(0f);
+            isTurnRight = true;
+        }
+
+        if (IsMoveTowardsTree && isTurnRight)
+        {
+            Turn(180f);
+            isTurnRight = false;
         }
     }
 
@@ -157,12 +170,18 @@ public class Animal : MonoBehaviour
     void MoveRight()
     {
         this.transform.position += Vector3.right * currentMovementSpeed * Time.deltaTime;
+        
     }
 
 
     void MoveTowardsTree()
     {
         this.transform.position += Vector3.left * currentMovementSpeed * Time.deltaTime;
+    }
+
+    void Turn(float angle)
+    {
+        this.transform.rotation = Quaternion.Euler(0f, angle, 0f);
     }
 
     

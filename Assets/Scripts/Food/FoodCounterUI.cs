@@ -7,6 +7,7 @@ public class FoodCounterUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI winterCountText;
     [SerializeField] TextMeshProUGUI foodAmountText;
     [SerializeField] TextMeshProUGUI seedAmountText;
+    [SerializeField] TextMeshProUGUI lifeEssenceAmountText;
 
 
 
@@ -32,12 +33,13 @@ public class FoodCounterUI : MonoBehaviour
     {
         UpdateFoodUI();
         UpdateSeedsUI();
+        UpdateLifeEssenceUI();
     }
 
 
     void UpdateFoodUI()
     {
-        winterCountText.text = "Winter: "+(WinterManager.Instance.CurrentWinterLevel+1);
+        winterCountText.text = "Winter: " + (WinterManager.Instance.CurrentWinterLevel + 1);
         foodAmountText.text = FoodCounter.Instance.TotalPlayerFood.ToString() + " / " + WinterManager.Instance.CurrentWinterLevelThreshold;
     }
 
@@ -45,5 +47,12 @@ public class FoodCounterUI : MonoBehaviour
     void UpdateSeedsUI()
     {
         seedAmountText.text = FoodCounter.Instance.TotalPlayerSeeds.ToString();
+
+
+
+    }
+    void UpdateLifeEssenceUI()
+    {
+        lifeEssenceAmountText.text = FoodCounter.Instance.TotalPlayerLifeEssence.ToString();
     }
 }

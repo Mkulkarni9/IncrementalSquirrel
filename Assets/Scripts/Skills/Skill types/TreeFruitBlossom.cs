@@ -6,7 +6,7 @@ public class TreeFruitBlossom : Skill
     {
         if (skill is TreeFruitBlossomSO fruitBlossomSkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(fruitBlossomSkill.fruitBlossomChance);
+            TreeStatsManager.Instance.StartFruitBlossom(fruitBlossomSkill.fruitBlossomInterval, fruitBlossomSkill.fruitBlossomChance, fruitBlossomSkill.fruitBlossomNumberOfFruits);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }

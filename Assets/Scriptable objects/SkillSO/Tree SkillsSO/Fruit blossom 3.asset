@@ -18,4 +18,6 @@ MonoBehaviour:
   essenceCost: 0
   skillsUnlocked: []
   skillPrefab: {fileID: -5167576884059414170, guid: 36505ba2e7ab49642958bfda916d8a80, type: 3}
-  fruitBlossomChance: 0.01
+  fruitBlossomInterval: 20
+  fruitBlossomChance: 0.05
+  fruitBlossomNumberOfFruits: 10

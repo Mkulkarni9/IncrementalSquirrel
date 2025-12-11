@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodCarried: []
+  ArtefactCarried: []
 --- !u!1 &5703180045005111136
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5660378, g: 0.27683815, b: 0.13616945, a: 1}
   m_FlipX: 0
@@ -258,6 +259,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9816c48723281a746b4c8151dd6d15d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 5
-  baseCarryingCapacity: 1
-  baseCoolDownInterval: 2
+  animalSO: {fileID: 0}

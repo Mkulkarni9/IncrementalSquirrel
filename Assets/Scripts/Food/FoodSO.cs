@@ -19,7 +19,7 @@ public class FoodSO : ScriptableObject
 
     public Category foodCategory;
     public Type foodType;
-    public int foodQuantity;
-    public int seedQuantity;
-    public int lifeEssenceQuantity;
+    public float foodQuantity;
+    public float seedQuantity;
+    public float lifeEssenceQuantity;
 }

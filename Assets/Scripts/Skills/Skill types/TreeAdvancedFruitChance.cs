@@ -6,7 +6,7 @@ public class TreeAdvancedFruitChance : Skill
     {
         if (skill is TreeAdvancedFruitSO advancedFruitChanceSkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(advancedFruitChanceSkill.increasedChanceOfAdvancedFruitFactor);
+            TreeStatsManager.Instance.UpdateAdvancedFruitChanceBonus(advancedFruitChanceSkill.increasedChanceOfAdvancedFruit);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }

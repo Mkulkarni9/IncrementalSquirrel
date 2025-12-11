@@ -6,7 +6,7 @@ public class TreeLifeEssesnceQty : Skill
     {
         if (skill is TreeLifeEssenceQtySo lifeEssenceQtySkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(lifeEssenceQtySkill.lifeEssenceQtyIncreaseFactor);
+            FruitStatsManager.Instance.UpdateLifeEssenceQtyBonus(lifeEssenceQtySkill.lifeEssenceQtyIncreaseFactor);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }

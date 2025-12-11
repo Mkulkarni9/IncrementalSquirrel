@@ -6,11 +6,13 @@ using UnityEngine;
 public class FoodCounter : Singleton<FoodCounter>
 {
     public static event Action<List<GameObject>> OnFoodCounted;
-    public int TotalPlayerFood { get; private set; }
-    public int TotalPlayerSeeds { get; private set; }
+    public float TotalPlayerFood { get; private set; }
+    public float TotalPlayerSeeds { get; private set; }
+    public float TotalPlayerLifeEssence { get; private set; }
 
-    int foodDepositedThisRound;
-    int seedsDepositedThisRound;
+    float foodDepositedThisRound;
+    float seedsDepositedThisRound;
+    float lifeEssenceDepositedThisRound;
 
     private void OnEnable()
     {
@@ -27,15 +29,18 @@ public class FoodCounter : Singleton<FoodCounter>
     {
         foodDepositedThisRound = 0;
         seedsDepositedThisRound = 0;
+        lifeEssenceDepositedThisRound = 0;
 
         foreach (GameObject foodItemDeposited in foodItemsDepositedList)
         {
-            CalculateFoodDeposited(foodItemDeposited.GetComponent<Food>().FoodSO.foodQuantity);
-            CalculateSeedsDeposited(foodItemDeposited.GetComponent<Food>().FoodSO.seedQuantity);
+            CalculateFoodDeposited(foodItemDeposited.GetComponent<Food>().FoodQty);
+            CalculateSeedsDeposited(foodItemDeposited.GetComponent<Food>().SeedQty);
+            CalculateLifeEssenceDeposited(foodItemDeposited.GetComponent<Food>().LifeEssenceQty);
         }
 
         TotalPlayerFood += foodDepositedThisRound;
         TotalPlayerSeeds += seedsDepositedThisRound;
+        TotalPlayerLifeEssence += lifeEssenceDepositedThisRound;
 
         //Debug.Log("Total player food: "+ TotalPlayerFood);
         //Debug.Log("Total player seeds: "+ TotalPlayerSeeds);
@@ -44,15 +49,20 @@ public class FoodCounter : Singleton<FoodCounter>
     }
 
 
-    void CalculateFoodDeposited(int foodQuantity)
+    void CalculateFoodDeposited(float foodQuantity)
     {
         foodDepositedThisRound += foodQuantity;
     }
 
-    void CalculateSeedsDeposited(int seedQuantity)
+    void CalculateSeedsDeposited(float seedQuantity)
     {
         seedsDepositedThisRound += seedQuantity;
     }
 
-    
+    void CalculateLifeEssenceDeposited(float lifeEssenceQuantity)
+    {
+        lifeEssenceDepositedThisRound += lifeEssenceQuantity;
+    }
+
+
 }

@@ -6,7 +6,7 @@ public class TreeSeedQty : Skill
     {
         if (skill is TreeSeedQtySO seedQtySkill)
         {
-            //AnimalStatsManager.Instance.UpdateAnimalCarryingCapacityBonus(seedQtySkill.seedQtyIncreaseFactor);
+            FruitStatsManager.Instance.UpdateSeedQtyBonus(seedQtySkill.seedQtyIncreaseFactor);
             Debug.Log("Skill activated: " + skill.skillName);
         }
     }
